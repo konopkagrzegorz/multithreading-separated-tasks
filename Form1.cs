@@ -20,9 +20,10 @@ namespace multithreading_separated_tasks
             InitializeComponent();
         }
 
-        private void PrimeNumbersButton_Click(object sender, EventArgs e)
+        private async void PrimeNumbersButton_Click(object sender, EventArgs e)
         {
-            Task.Run(() =>
+            PrimeNumbersButton.Enabled = false;
+            await Task.Run(() =>
             {
                 for (int i = 0; i < MaxPrimeNumber + 1; i++)
                 {
@@ -32,6 +33,7 @@ namespace multithreading_separated_tasks
                     }
                 }
             });
+            PrimeNumbersButton.Enabled = true;
         }
 
 
@@ -72,21 +74,24 @@ namespace multithreading_separated_tasks
             FibonacciNumber = Int32.Parse(FibonacciDropdown.Value.ToString());
         }
 
-        private void FibonacciButton_Click(object sender, EventArgs e)
+        private async void FibonacciButton_Click(object sender, EventArgs e)
         {
-            Task.Run(() =>
+            FibonacciButton.Enabled = false;
+            await Task.Run(() =>
             {
                 long number = CalculateFibonacci(FibonacciNumber);
                 Invoke((MethodInvoker)delegate { FibonacciTextBox.Text += (Environment.NewLine + number); });
             });
+            FibonacciButton.Enabled = true;
         }
 
-        private void DrawButton_Click(object sender, EventArgs e)
+        private async void DrawButton_Click(object sender, EventArgs e)
         {
-            Task.Run(() =>
+            DrawButton.Enabled = false;
+            await Task.Run(() =>
             {
                 Random random = new Random();
-                for (int i = 0; i < 100; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     DrawPanel
                     .CreateGraphics()
@@ -94,6 +99,7 @@ namespace multithreading_separated_tasks
                     Thread.Sleep(1000);
                 }
             });
+            DrawButton.Enabled = true;
         }
     }
 }
