@@ -36,6 +36,7 @@
             this.DrawPanel = new System.Windows.Forms.Panel();
             this.PrimesDropdown = new System.Windows.Forms.NumericUpDown();
             this.FibonacciDropdown = new System.Windows.Forms.NumericUpDown();
+            this.ClearAllButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PrimesDropdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FibonacciDropdown)).BeginInit();
             this.SuspendLayout();
@@ -137,11 +138,23 @@
             0});
             this.FibonacciDropdown.ValueChanged += new System.EventHandler(this.FibonacciDropdown_ValueChanged);
             // 
+            // ClearAllButton
+            // 
+            this.ClearAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ClearAllButton.Location = new System.Drawing.Point(12, 457);
+            this.ClearAllButton.Name = "ClearAllButton";
+            this.ClearAllButton.Size = new System.Drawing.Size(729, 42);
+            this.ClearAllButton.TabIndex = 8;
+            this.ClearAllButton.Text = "Czyść";
+            this.ClearAllButton.UseVisualStyleBackColor = true;
+            this.ClearAllButton.Click += new System.EventHandler(this.ClearAllButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 461);
+            this.ClientSize = new System.Drawing.Size(759, 511);
+            this.Controls.Add(this.ClearAllButton);
             this.Controls.Add(this.FibonacciDropdown);
             this.Controls.Add(this.PrimesDropdown);
             this.Controls.Add(this.DrawPanel);
@@ -151,7 +164,7 @@
             this.Controls.Add(this.FibonacciButton);
             this.Controls.Add(this.PrimeNumbersButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Multithreading";
             ((System.ComponentModel.ISupportInitialize)(this.PrimesDropdown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FibonacciDropdown)).EndInit();
             this.ResumeLayout(false);
@@ -168,6 +181,7 @@
         private System.Windows.Forms.Panel DrawPanel;
         private System.Windows.Forms.NumericUpDown PrimesDropdown;
         private System.Windows.Forms.NumericUpDown FibonacciDropdown;
+        private System.Windows.Forms.Button ClearAllButton;
     }
 }
 

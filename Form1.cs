@@ -96,10 +96,22 @@ namespace multithreading_separated_tasks
                     DrawPanel
                     .CreateGraphics()
                     .DrawRectangle(new Pen(Brushes.Red, 4), new Rectangle(random.Next(0, DrawPanel.Width), random.Next(0, DrawPanel.Height), 5,5));
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
             });
             DrawButton.Enabled = true;
+        }
+
+        private void ClearAllButton_Click(object sender, EventArgs e)
+        {
+            if (DrawButton.Enabled && FibonacciButton.Enabled && PrimeNumbersButton.Enabled)
+            {
+                DrawPanel.Refresh();
+                PrimeTextBox.Clear();
+                FibonacciTextBox.Clear();
+
+            }
+                
         }
     }
 }
