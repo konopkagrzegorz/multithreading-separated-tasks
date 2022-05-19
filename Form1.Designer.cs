@@ -123,6 +123,11 @@
             // FibonacciDropdown
             // 
             this.FibonacciDropdown.Location = new System.Drawing.Point(369, 98);
+            this.FibonacciDropdown.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
             this.FibonacciDropdown.Minimum = new decimal(new int[] {
             1,
             0,

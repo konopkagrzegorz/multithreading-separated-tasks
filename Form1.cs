@@ -110,8 +110,7 @@ namespace multithreading_separated_tasks
                 PrimeTextBox.Clear();
                 FibonacciTextBox.Clear();
 
-            }
-                
+            }    
         }
     }
 }
